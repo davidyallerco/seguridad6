@@ -22,7 +22,8 @@ public class Seguridad6Application {
  user: user
  clave: to_be_encoded
  
- en este escenario saldra error porque la clave no esta encriptado.
+ en este escenario se arreglo con PassworEncoder para
+ hacer pasar la clave sin encriptar
  Spring exige que este encriptado.
  
  */
