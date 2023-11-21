@@ -9,14 +9,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-    @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(auth ->
-        		auth.anyRequest().denyAll())
-                .formLogin(Customizer.withDefaults())
-                .httpBasic(Customizer.withDefaults());
-        return http.build();
-    }
-    //...configuracion que lleva por defecto , lo puede quitar igual funcionara
-   
+	@Bean
+	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http.authorizeHttpRequests(auth -> auth.requestMatchers("/loans", "/balance", "/accounts", "/cards")
+				.authenticated().anyRequest().permitAll())
+				.formLogin(Customizer.withDefaults())
+				.httpBasic(Customizer.withDefaults());
+		return http.build();
+	}
+
 }
