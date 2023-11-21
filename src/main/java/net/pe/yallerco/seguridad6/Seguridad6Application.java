@@ -14,7 +14,7 @@ public class Seguridad6Application {
 }
 
 
-/*
- * usuario: user
- * password: poner la clave que sale en la consola
+/*configuracion basica en properties
+ * usuario: david
+ * password:123456
  */
