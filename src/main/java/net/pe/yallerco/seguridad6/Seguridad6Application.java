@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 @SpringBootApplication
-@EnableWebSecurity //aunque ahora ya lleva implicito
 public class Seguridad6Application {
 
 	public static void main(String[] args) {
@@ -17,8 +16,13 @@ public class Seguridad6Application {
 
 
 /*
- user: david
- clave: 123456
+ user: admin
+ clave: to_be_encoded
  
+ user: user
+ clave: to_be_encoded
+ 
+ en este escenario saldra error porque la clave no esta encriptado.
+ Spring exige que este encriptado.
  
  */
