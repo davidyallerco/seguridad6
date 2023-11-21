@@ -26,4 +26,6 @@ public class Seguridad6Application {
  hacer pasar la clave sin encriptar
  Spring exige que este encriptado.
  
+ Se esta conectando a la BD
+ 
  */
