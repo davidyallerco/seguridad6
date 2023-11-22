@@ -43,10 +43,10 @@ public class SecurityConfig {
     }*/
 	
 	//nos ayuda para que funcione sin encriptacion
-	@Bean
+	/*@Bean
     PasswordEncoder passwordEncoder() {
         return  NoOpPasswordEncoder.getInstance();
-    }
+    }*/
 	
 	//usado para BD de spring
 	/*@Bean

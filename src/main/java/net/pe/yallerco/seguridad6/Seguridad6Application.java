@@ -16,16 +16,18 @@ public class Seguridad6Application {
 
 
 /*
- * admin
+ * admin con clave codificada
  user: ddaviddya@gmail.com
- clave: 12345678
+ clave: -1861353340
  
- user
+ user con clave codificada
  user: davidyallerco@gmail.com
- clave: 12345678
+ clave: -1861353340
  
  
  Se esta conectando a la BD customizada
  
  se cambio la bd db_seguridad6_2
+ 
+ se actualizo la DB las claves
  */
