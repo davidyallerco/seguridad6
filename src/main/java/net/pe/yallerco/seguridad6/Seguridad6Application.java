@@ -16,16 +16,16 @@ public class Seguridad6Application {
 
 
 /*
- user: admin
- clave: to_be_encoded
+ * admin
+ user: ddaviddya@gmail.com
+ clave: 12345678
  
- user: user
- clave: to_be_encoded
+ user
+ user: davidyallerco@gmail.com
+ clave: 12345678
  
- en este escenario se arreglo con PassworEncoder para
- hacer pasar la clave sin encriptar
- Spring exige que este encriptado.
  
- Se esta conectando a la BD
+ Se esta conectando a la BD customizada
  
+ se cambio la bd db_seguridad6_2
  */

@@ -48,10 +48,10 @@ public class SecurityConfig {
         return  NoOpPasswordEncoder.getInstance();
     }
 	
-	//usado para BD
-	@Bean
+	//usado para BD de spring
+	/*@Bean
     UserDetailsService userDetailsService(DataSource dataSource) {
         return new JdbcUserDetailsManager(dataSource);
     }
-	
+	*/
 }

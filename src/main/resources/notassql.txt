@@ -57,3 +57,18 @@ insert into users (username, password, enabled) VALUES
 insert into authorities (username, authority) VALUES
                                                   ('admin', 'admin'),
                                                   ('user', 'user');												  
+====================================================================    
+--configuracion mejorada en mysql donde creamos tablas a nuestro criterio
+--los anterior ya no usaremos , es un una configuracion proporcionada por spring
+
+create table customers(
+                          id int primary key,
+                          email varchar(50) not null,
+                          pwd varchar(500) not null,
+                          rol varchar(20) not null);
+                          
+insert into customers (id,email, pwd, rol) VALUES
+                                       (1,'ddaviddya@gmail.com', '12345678', 'admin'),
+                                        (2,'davidyallerco@gmail.com', '12345678', 'user');
+                                                            
+                                                                   
