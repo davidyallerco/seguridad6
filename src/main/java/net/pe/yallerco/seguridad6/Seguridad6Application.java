@@ -16,14 +16,14 @@ public class Seguridad6Application {
 
 
 /*
- * UTILIZANDO AUTHENTICATION PROVIDER (no es el mas recomendable)
+ * UTILIZANDO CORS , ahora se puede consumir por ejemplo angular (otro servidor)
  * admin sin clave codificada
  user: ddaviddya@gmail.com
- clave:12345678 			//-1861353340
+ clave:12345678
  
  user con clave codificada
  user: davidyallerco@gmail.com
- clave: 12345678    //-1861353340
+ clave: 12345678 
  
  
  Se esta conectando a la BD customizada
