@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.core.userdetails.User;
@@ -23,35 +24,20 @@ public class SecurityConfig {
 				.authenticated().anyRequest().permitAll())
 				.formLogin(Customizer.withDefaults())
 				.httpBasic(Customizer.withDefaults());
+		//opcional en caso salga problemas de cors, lo desabilitaremos, mas adelante lo implementaremos
+		http.cors(AbstractHttpConfigurer::disable);
+		http.csrf(AbstractHttpConfigurer::disable);
+		
 		return http.build();
 	}
 
-	/*
-	@Bean
-    InMemoryUserDetailsManager inMemoryUserDetailsManager() {
-        var admin = User.withUsername("admin")
-                .password("to_be_encoded")
-                .authorities("ADMIN")
-                .build();
-
-        var user = User.withUsername("user")
-                .password("to_be_encoded")
-                .authorities("USER")
-                .build();
-
-        return new InMemoryUserDetailsManager(admin, user);
-    }*/
+	
 	
 	//nos ayuda para que funcione sin encriptacion
-	/*@Bean
+	@Bean
     PasswordEncoder passwordEncoder() {
         return  NoOpPasswordEncoder.getInstance();
-    }*/
-	
-	//usado para BD de spring
-	/*@Bean
-    UserDetailsService userDetailsService(DataSource dataSource) {
-        return new JdbcUserDetailsManager(dataSource);
     }
-	*/
+	
+	
 }

@@ -75,3 +75,8 @@ insert into customers (id,email, pwd, rol) VALUES
 UPDATE `db_seguridad6_2`.`customers` SET `pwd`='-1861353340' WHERE  `id`=1;
 UPDATE `db_seguridad6_2`.`customers` SET `pwd`='-1861353340' WHERE  `id`=2;                                                            
                                                                    
+=============================================================================================
+--regresamos las claves si codificar
+--para usar encoded y tener la clave codificada en la tabla
+UPDATE `db_seguridad6_2`.`customers` SET `pwd`='12345678' WHERE  `id`=1;
+UPDATE `db_seguridad6_2`.`customers` SET `pwd`='12345678' WHERE  `id`=2;                                                                       
