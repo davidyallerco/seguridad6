@@ -11,9 +11,15 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import net.pe.yallerco.seguridad6.security.CsrfCookieFilter;
+
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
@@ -25,11 +31,20 @@ public class SecurityConfig {
 
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests(auth -> auth.requestMatchers("/loans", "/balance", "/accounts", "/cards")
-				.authenticated().anyRequest().permitAll()).formLogin(Customizer.withDefaults())
-				.httpBasic(Customizer.withDefaults());
-		 http.cors(cors -> corsConfigurationSource()); //-----------
+		var requestHandler = new CsrfTokenRequestAttributeHandler();
+		requestHandler.setCsrfRequestAttributeName("_csrf");
 
+		http.authorizeHttpRequests(auth -> auth.requestMatchers("/loans", "/balance", "/accounts", "/cards")
+				.authenticated().anyRequest().permitAll())
+		.formLogin(Customizer.withDefaults())
+				.httpBasic(Customizer.withDefaults());
+		http.cors(cors -> corsConfigurationSource()); 
+
+		http.csrf(csrf -> csrf.
+				csrfTokenRequestHandler(requestHandler)
+				.ignoringRequestMatchers("/welcome", "/about_us")
+				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
+				.addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class);
 		return http.build();
 	}
 

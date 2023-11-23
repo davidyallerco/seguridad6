@@ -16,7 +16,7 @@ public class Seguridad6Application {
 
 
 /*
- * UTILIZANDO CORS , ahora se puede consumir por ejemplo angular (otro servidor)
+ * UTILIZANDO CORS y CSRF, ahora se puede consumir por ejemplo angular (otro servidor)
  * admin sin clave codificada
  user: ddaviddya@gmail.com
  clave:12345678
