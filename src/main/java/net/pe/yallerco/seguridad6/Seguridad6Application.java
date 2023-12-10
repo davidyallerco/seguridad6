@@ -16,19 +16,19 @@ public class Seguridad6Application {
 
 
 /*
- * UTILIZANDO CORS y CSRF, ahora se puede consumir por ejemplo angular (otro servidor)
- * admin sin clave codificada
- user: ddaviddya@gmail.com
- clave:12345678
+ * UTILIZANDO ROLES Y PRIVILEGIOS
+ user: 
+ account@gmail.com
+ cards@gmail.com
+ loans@gmail.com
+ balance@gmail.com
  
- user con clave codificada
- user: davidyallerco@gmail.com
- clave: 12345678 
+ clave:
+ 12345678
  
  
- Se esta conectando a la BD customizada
  
- se cambio la bd db_seguridad6_2
+ se cambio la bd db_seguridad6_3
  
- se actualizo la DB las claves otra vez sin codificar
+
  */
